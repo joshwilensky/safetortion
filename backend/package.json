@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "bash ./update-maxmind-db.sh",
-    "start": "node -r dotenv/config server.js"
+    "start": "node server/server.mjs",
+    "update-geo": "bash server/update-maxmind-db.sh"
   },
   "keywords": [],
   "author": "",

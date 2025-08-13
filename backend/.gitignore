@@ -1,0 +1,7 @@
+# env & secrets
+.env
+backend/.env
+
+# big/binary data (do not commit mmdb)
+*.mmdb
+backend/geo-db/

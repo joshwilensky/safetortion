@@ -19,9 +19,22 @@ const GEO_MAXMIND_DB_PATH = process.env.GEO_MAXMIND_DB_PATH || "";
 let maxmindReader = null;
 
 if (GEO_MAXMIND_DB_PATH && fs.existsSync(GEO_MAXMIND_DB_PATH)) {
-  const { open } = await import("maxmind");
-  maxmindReader = await open(GEO_MAXMIND_DB_PATH);
-  console.log("[geo] Using MaxMind DB at", GEO_MAXMIND_DB_PATH);
+  //   const { open } = await import("maxmind");
+  //   maxmindReader = await open(GEO_MAXMIND_DB_PATH);
+  //   console.log("[geo] Using MaxMind DB at", GEO_MAXMIND_DB_PATH);
+  // } else {
+  //   console.log("[geo] Using HTTP provider:", GEO_PROVIDER);
+  // }
+  try {
+    const { open } = await import("maxmind");
+    maxmindReader = await open(GEO_MAXMIND_DB_PATH);
+    console.log("[geo] Using MaxMind DB at", GEO_MAXMIND_DB_PATH);
+  } catch (err) {
+    console.warn(
+      "[geo] MaxMind DB present but 'maxmind' module not installed. Falling back to HTTP provider.",
+      err?.message
+    );
+  }
 } else {
   console.log("[geo] Using HTTP provider:", GEO_PROVIDER);
 }
@@ -76,7 +89,7 @@ app.get("/r/:id", async (req, res) => {
   row.events.push(evt);
   res.redirect(row.target);
 });
-
+app.get("/healthz", (_req, res) => res.json({ ok: true }));
 /** Geo lookup with fallback chain */
 async function geoLookup(ip) {
   // Skip private/local IPs
