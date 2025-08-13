@@ -89,6 +89,19 @@ app.get("/r/:id", async (req, res) => {
   row.events.push(evt);
   res.redirect(row.target);
 });
+app.get("/", (_req, res) => {
+  res.type("text").send(
+    `SafeLink API is live.
+
+Useful endpoints:
+  • GET  /healthz
+  • POST /api/links        { label, target }
+  • GET  /api/links/:id
+  • GET  /r/:id            (redirects + logs IP/UA/geo)
+
+Frontend is deployed separately on Vercel.`
+  );
+});
 app.get("/healthz", (_req, res) => res.json({ ok: true }));
 /** Geo lookup with fallback chain */
 async function geoLookup(ip) {
