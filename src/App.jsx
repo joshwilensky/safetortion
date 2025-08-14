@@ -12,8 +12,8 @@ import FileCapture from "./components/FileCapture.jsx";
 import { useApp } from "./context/AppContext.jsx";
 import EvidenceLink from "./components/EvidenceLink.jsx";
 import EncryptionMenuButton from "./components/EncryptionMenuButton.jsx";
-import GlobalSafety from "./components/GlobalSafety.jsx";
-import Header from "./components/Header.jsx";
+import logo from "../logo.png";
+
 export default function App() {
   // Save OCR notes coming from EvidenceVault actions
   const { addEvidence } = useApp();
@@ -42,7 +42,7 @@ export default function App() {
         <div className='head-inner'>
           <div className='brand-wrap'>
             <Link to='/' className='brand'>
-              BocaSafe
+              <img src={logo} className="logo" />
             </Link>
             <button
               className='hamburger'
