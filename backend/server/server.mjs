@@ -91,7 +91,7 @@ app.get("/r/:id", async (req, res) => {
 });
 app.get("/", (_req, res) => {
   res.type("text").send(
-    `SafeLink API is live.
+    `BocaSafe API is live.
 
 Useful endpoints:
   • GET  /healthz

@@ -20,7 +20,7 @@ export default function DangerZone() {
       style={{ borderColor: "#5a1a1a", background: "#2a1212" }}>
       <h3>Danger Zone</h3>
       <p>
-        Deletes everything stored by SafeLink on this device. This cannot be
+        Deletes everything stored by BocaSafe on this device. This cannot be
         undone.
       </p>
       <button

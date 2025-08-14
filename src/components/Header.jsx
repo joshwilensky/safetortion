@@ -21,7 +21,7 @@ export default function Header() {
         {/* Brand */}
         <a href='/' className='brand' aria-label='Home'>
           <Logo />
-          <span className='brand-name'>SafeLink</span>
+          <span className='brand-name'>BocaSafe</span>
         </a>
 
         {/* Desktop nav */}

@@ -42,7 +42,7 @@ export default function App() {
         <div className='head-inner'>
           <div className='brand-wrap'>
             <Link to='/' className='brand'>
-              Safetortion
+              BocaSafe
             </Link>
             <button
               className='hamburger'
@@ -163,7 +163,7 @@ export default function App() {
       {/* Footer */}
       <footer className='footer'>
         <small>
-          © {new Date().getFullYear()} SafeLink • For defense and support only.
+          © {new Date().getFullYear()} BocaSafe • For defense and support only.
           Don’t pay. Don’t send more. Preserve evidence.
         </small>
       </footer>

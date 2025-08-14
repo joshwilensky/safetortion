@@ -23,7 +23,7 @@ export default function BackupModal({
     return {
       v: 1,
       createdAt: Date.now(),
-      app: "safelink",
+      app: "bocasafe",
       evidence,
       // capture recently-deleted items (by item only; we'll re-archive on import)
       archives: listArchives().map((a) => a.item),
